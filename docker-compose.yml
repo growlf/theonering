@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  installer:
+    image: yeticraft/installer:latest
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    #deploy:
+    #  mode: global
+    #  placement:
+    #    constraints: [node.platform.os == linux]
